@@ -38,5 +38,10 @@ module.exports = {
     } else {
       response.sendStatus(422);
     }
+  },
+  deleteAlbum: (request, response) => {
+    Album.findOneAndRemove({ _id: request.params.albumId, name: request.body.name })
+      .then((album) => { response.sendStatus(album ? 204 : 404); })
+      .catch(() => { response.sendStatus(404); });
   }
 }
