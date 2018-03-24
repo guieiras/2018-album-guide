@@ -3,6 +3,11 @@ const express = require('express');
 const app = express();
 
 const port = process.env.PORT || 3000;
+const mongoose = require('mongoose');
+const Album = require('./models').Album;
+
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URL);
 
 app.listen(port, () => {
   console.log('Server is running on Port: ' + port);
