@@ -1,0 +1,36 @@
+.section {
+    margin-top: 1em;
+}
+
+.sticker-btn {
+    margin-top: 0.5em;
+    color: #000000;
+    background-color: #dddddd;
+}
+
+.sticker-btn[js-sticker-filled=true] {
+    color: #fff;
+    background-color: #dc3545;
+    font-weight: bold;
+}
+
+.navbar button {
+    padding: 4px 1px;
+}
+
+.m-r {
+    margin-right: 8px;
+}
+
+.text-sm {
+    font-size: 0.7em;
+    margin: 8px 0px 0 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.fa-placeholder {
+    font-family: "FontAwesome";
+}

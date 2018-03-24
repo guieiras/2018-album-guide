@@ -9,16 +9,84 @@
     crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
   <title>Guia Álbum da Copa</title>
+  <script type="text/javascript" src="model.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="#">
-      <img src="russia-2018.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Guia do Álbum da Copa
+      <img src="russia-2018.svg" width="30" height="30"
+          class="d-inline-block align-top" alt=""> Guia do Álbum da Copa
     </a>
+    <div class="btn-block nav-status">
+      <div class="row">
+        <div class="col-6">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+            </div>
+            <input type="number" class="form-control" placeholder="Busca" js-search>
+          </div>
+        </div>
+        <div class="col-6 text-right">
+          <button class='btn m-r' js-option="sync"><i class="fa fa-refresh fa-fw"></i></button>
+          <button class='btn' js-option="toggleMode"><i class="fa fa-pencil fa-fw"></i></button>
+          <button class='btn m-r' js-option="toggleViewMode"><i class="fa fa-globe fa-fw"></i></button>
+          <button class='btn' js-option="eraseKey" class="ml-sm"><i class="fa fa-sign-out fa-fw"></i></button>
+        </div>
+      </div>
+      <p class="text-sm">
+        <b>Status: </b>
+        <span js-filled-count="">0</span> de <span js-total-count="">0</span>
+        (<span js-status-percent="">0</span>%) |
+        Faltam: <span js-remaining-count="">0</span>
+      </p>
+    </div>
   </nav>
-  <div class="container"></div>
+  <div class="container" js-album></div>
+
+  <template js-token-form>
+    <div class="row section">
+      <div class="col">
+        <div class="card w-100">
+          <div class="card-body">
+            <h1>Configurar Álbum</h1>
+            <p>Informe o Token do Álbum que deseja gerenciar:</p>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="" id="album-token">
+              <div class="input-group-append">
+                <button class="btn btn-primary js-btn-token" type="button">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template js-album-section>
+    <div class="row section">
+      <div class="col">
+        <div class="card w-100">
+          <div class="card-body">
+            <p><span js-section-name></span> (<span js-section-count=""></span>)</p>
+            <div class="row" js-section-content></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template js-album-sticker>
+    <div class="col-3 button">
+      <button type="button" class="btn btn-default btn-block sticker-btn" js-sticker-button></button>
+    </div>
+  </template>
+
+  <script type="text/javascript" src="./view.js"></script>
+  <script type="text/javascript" src="./album.js"></script>
 </body>
 
 </html>
