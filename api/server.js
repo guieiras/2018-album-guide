@@ -11,6 +11,8 @@ require('dotenv').config();
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URL);
 
+require('./routes')(app);
+
 app.listen(port, () => {
   console.log('Server is running on Port: ' + port);
 });
