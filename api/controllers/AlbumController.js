@@ -13,5 +13,30 @@ module.exports = {
     Album.findOne({ _id: request.params.albumId })
       .then((album) => { album ? response.send(album) : response.sendStatus(404); })
       .catch(() => { response.sendStatus(404); });
+  },
+  postStickers: (request, response) => {
+    const stickers = request.body.stickers;
+    if (stickers) {
+      const updateParams = Object
+        .keys(stickers)
+        .reduce((memo, stickNumber) => {
+          memo[`stickers.${stickNumber}`] = stickers[stickNumber];
+          return memo;
+        }, {})
+
+      Album.update({ _id: request.params.albumId }, { $inc: updateParams })
+        .then(() => {
+          Album.findOne({ _id: request.params.albumId })
+          .then((album) => {
+            response.send(Object.keys(stickers).reduce((memo, sticker) => {
+              memo[sticker] = album.stickers[sticker];
+              return memo;
+            }, {}));
+          })
+        })
+        .catch(() => { response.sendStatus(404); });
+    } else {
+      response.sendStatus(422);
+    }
   }
 }
