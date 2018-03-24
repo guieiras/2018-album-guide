@@ -1,0 +1,16 @@
+{
+  "short_name": "Guia Álbum 2018",
+  "name": "Guia do Álbum da Copa do Mundo 2018",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#8B2B0C",
+  "theme_color": "#2875CA",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "index.html"
+}
