@@ -49,6 +49,7 @@ function populateTokenForm() {
   albumNode.innerHTML = ""
   const tokenFormTemplate = document.querySelector("template[js-token-form]");
   albumNode.appendChild(document.importNode(tokenFormTemplate.content, true));
+  setRequestTokenLink();
   document.querySelector('.js-btn-token').addEventListener('click', () => {
     tokenId = document.querySelector('#album-token').value;
     fetch(`${getUrl()}/albuns/${tokenId}`)
@@ -118,7 +119,7 @@ function getTokenFromStorage() {
 }
 
 function getUrl() {
-  return 'http://localhost:3000'
+  return 'http://stickers-2018.us-3.evennode.com'
 }
 
 init();

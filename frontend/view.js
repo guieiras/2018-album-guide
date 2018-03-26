@@ -48,6 +48,9 @@ ViewFunctions = {
   eraseKey: function() {
     localStorage.removeItem('albumToken');
     populateTokenForm();
+  },
+  copyToken: function () {
+    Clipboard.copy(localStorage.getItem('albumToken'));
   }
 }
 

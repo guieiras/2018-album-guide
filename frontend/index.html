@@ -26,7 +26,7 @@
     </a>
     <div class="btn-block nav-status">
       <div class="row">
-        <div class="col-6">
+        <div class="col-7">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-search"></i></span>
@@ -34,18 +34,22 @@
             <input type="number" class="form-control" placeholder="Busca" js-search>
           </div>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-5 text-right">
           <button class='btn m-r' js-option="sync"><i class="fa fa-refresh fa-fw"></i></button>
           <button class='btn' js-option="toggleMode"><i class="fa fa-pencil fa-fw"></i></button>
-          <button class='btn m-r' js-option="toggleViewMode"><i class="fa fa-globe fa-fw"></i></button>
-          <button class='btn' js-option="eraseKey" class="ml-sm"><i class="fa fa-sign-out fa-fw"></i></button>
+          <button class='btn' js-option="toggleViewMode"><i class="fa fa-globe fa-fw"></i></button>
         </div>
       </div>
       <p class="text-sm">
-        <b>Status: </b>
+        <b>Meu Álbum: </b>
         <span js-filled-count="">0</span> de <span js-total-count="">0</span>
         (<span js-status-percent="">0</span>%) |
         Faltam: <a js-copy href=""><span js-remaining-count="">0</span></a>
+      </p>
+      <p class="text-sm">
+        <b>Meu Token: </b>
+        <a class="m-r" js-option="copyToken" href=""><i class="fa fa-clipboard"></i> Copiar</a>
+        <a js-option="eraseKey" href=""><i class="fa fa-sign-out"></i> Sair</a>
       </p>
     </div>
   </nav>
