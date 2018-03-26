@@ -35,8 +35,7 @@ window.Clipboard = (function (window, document, navigator) {
     createTextArea(text);
     selectText();
     copyToClipboard();
-    screenLeft(pageX);
-    screenTop(pageY);
+    window.scrollTo(pageX, pageY);
   };
 
   return { copy };
@@ -58,6 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector('[js-copy]').addEventListener('click', (event) => {
     event.preventDefault();
     Clipboard.copy(getMissingStickersText());
-    copyLink.focus();
+    event.target.focus();
   });
 });
