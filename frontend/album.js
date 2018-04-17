@@ -29,7 +29,7 @@ function populateAlbum() {
         const mode = localStorage.getItem('mode');
         if (mode == 'write' || mode == 'delete') {
           fetch(`${getUrl()}/albuns/${getTokenFromStorage()}`, {
-            method: 'put',
+            method: 'post',
             headers: {
               'Content-Type': 'application/json'
             },
@@ -119,7 +119,7 @@ function getTokenFromStorage() {
 }
 
 function getUrl() {
-  return 'http://stickers-2018.us-3.evennode.com'
+  return 'http://2018-stickers-api-zmgkxqpori.now.sh';
 }
 
 init();
