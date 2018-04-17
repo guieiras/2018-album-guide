@@ -6,6 +6,6 @@ module.exports = function (app) {
 
   app.route('/albuns/:albumId')
     .get(AlbumController.getAlbum)
-    .put(AlbumController.postStickers)
+    .post(AlbumController.postStickers)
     .delete(AlbumController.deleteAlbum);
 };

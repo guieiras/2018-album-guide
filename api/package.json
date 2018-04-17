@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "now -e MONGODB_URL=@mongodb_url -e NODE_ENV=production -e PORT=443"
   },
   "author": "",
   "license": "ISC",
