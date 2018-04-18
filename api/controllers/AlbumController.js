@@ -24,7 +24,7 @@ module.exports = {
           return memo;
         }, {})
 
-      Album.update({ _id: request.params.albumId }, { $inc: updateParams })
+      Album.update({ _id: request.params.albumId }, updateParams)
         .then(() => {
           Album.findOne({ _id: request.params.albumId })
           .then((album) => {
@@ -34,7 +34,10 @@ module.exports = {
             }, {}));
           })
         })
-        .catch(() => { response.sendStatus(404); });
+        .catch((e) => {
+          console.error(e);
+          response.sendStatus(404);
+        });
     } else {
       response.sendStatus(422);
     }
