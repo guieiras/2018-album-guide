@@ -119,7 +119,7 @@ function getTokenFromStorage() {
 }
 
 function getUrl() {
-  return 'http://2018-stickers-api-zmgkxqpori.now.sh';
+  return 'http://localhost:3000';
 }
 
 init();
